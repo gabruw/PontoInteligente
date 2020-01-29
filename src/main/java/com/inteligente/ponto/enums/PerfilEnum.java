@@ -1,4 +1,4 @@
-package com.kazumi.pontointeligente.api.enums;
+package com.inteligente.ponto.enums;
 
 public enum PerfilEnum {
 	ROLE_ADMIN,

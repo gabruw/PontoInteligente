@@ -1,18 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.2.RELEASE</version>
-		<relativePath />
-		<!-- lookup parent from repository -->
+		<version>2.3.0.M1</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kazumi</groupId>
-	<artifactId>ponto-inteligente</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.gabruw</groupId>
+	<artifactId>PontoInteligente</artifactId>
+	<version>v001</version>
 	<name>PontoInteligente</name>
-	<description>API para o sistema de ponto inteligente.</description>
+	<description>API do sistema de Ponto Inteligente</description>
 
 	<properties>
 		<java.version>13</java.version>
@@ -42,44 +43,28 @@
 			</exclusions>
 		</dependency>
 
-		<!-- JPA, MySQL e H2 -->
+		<!-- JPA - https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+		<!-- MySQL - https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 
+		<!-- H2 - https://mvnrepository.com/artifact/com.h2database/h2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
 
+		<!-- EhCache - https://mvnrepository.com/artifact/net.sf.ehcache/ehcache -->
 		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency>
-
-		<!-- Spring Security -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-		</dependency>
-
-		<!-- Test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -91,5 +76,20 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>

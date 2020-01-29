@@ -1,4 +1,4 @@
-package com.kazumi.pontointeligente.api;
+package com.inteligente.ponto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
