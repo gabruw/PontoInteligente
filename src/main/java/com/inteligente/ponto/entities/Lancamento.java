@@ -1,5 +1,7 @@
 package com.inteligente.ponto.entities;
 
-public class Lancamento {
+import java.io.Serializable;
+
+public class Lancamento implements Serializable{
 
 }
