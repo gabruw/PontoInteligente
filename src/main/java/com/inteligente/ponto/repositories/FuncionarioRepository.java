@@ -6,6 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import org.hibernate.annotations.NamedQuery;
+
+import java.util.Optional;
+
 import org.hibernate.annotations.NamedQueries;
 
 import com.inteligente.ponto.entities.Funcionario;
@@ -14,6 +17,9 @@ import com.inteligente.ponto.entities.Funcionario;
 @NamedQueries({
 		@NamedQuery(name = "FuncionarioRepository.findByAutorizacaoId", query = "SELECT func FROM Funcionario func WHERE func.autorizacao.id = :autorizacaoId") })
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
+	@Transactional(readOnly = true)
+	Optional<Funcionario> findById(@Param("Id") Long Id);
+	
 	@Transactional(readOnly = true)
 	Funcionario findByCpf(String cpf);
 

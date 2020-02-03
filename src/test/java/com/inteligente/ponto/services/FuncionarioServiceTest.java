@@ -29,6 +29,7 @@ public class FuncionarioServiceTest {
 	@Autowired
 	private FuncionarioService funcionarioService;
 
+	private static final long ID = 1;
 	private static final String CNPJ = "51463645000100";
 
 	@Before
@@ -37,6 +38,12 @@ public class FuncionarioServiceTest {
 		BDDMockito.given(this.funcionarioRepository.findByAutorizacaoId(Mockito.anyLong()))
 				.willReturn(new Funcionario());
 		BDDMockito.given(this.funcionarioRepository.save(Mockito.any(Funcionario.class))).willReturn(new Funcionario());
+	}
+
+	@Test
+	public void testBuscarFuncionarioId() {
+		Optional<Funcionario> funcionario = this.funcionarioService.buscarPorId(ID);
+		assertTrue(funcionario.isPresent());
 	}
 
 	@Test

@@ -19,6 +19,12 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	private FuncionarioRepository funcionarioRepository;
 
 	@Override
+	public Optional<Funcionario> buscarPorId(long id) {
+		log.info("Buscando funcioário pelo Id {}", id);
+		return this.funcionarioRepository.findById(id);
+	}
+	
+	@Override
 	public Optional<Funcionario> buscarPorCpf(String cpf) {
 		log.info("Buscando funcioário pelo CPF {}", cpf);
 		return Optional.ofNullable(this.funcionarioRepository.findByCpf(cpf));
@@ -34,5 +40,5 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	public Funcionario persistir(Funcionario funcionario) {
 		log.info("Persistindo funcionário: {}", funcionario);
 		return this.funcionarioRepository.save(funcionario);
-	}
+	}	
 }

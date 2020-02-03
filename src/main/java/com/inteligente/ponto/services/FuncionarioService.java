@@ -5,6 +5,8 @@ import java.util.Optional;
 import com.inteligente.ponto.entities.Funcionario;
 
 public interface FuncionarioService {
+	Optional<Funcionario> buscarPorId(long id);
+	
 	Optional<Funcionario> buscarPorCpf(String cpf);
 
 	Optional<Funcionario> buscarPorAutorizacaoId(long id);
