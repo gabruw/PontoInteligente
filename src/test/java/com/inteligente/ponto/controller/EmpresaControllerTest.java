@@ -11,6 +11,7 @@ import org.mockito.Mockito;
 import org.mockito.BDDMockito;
 import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -41,6 +42,7 @@ public class EmpresaControllerTest {
 	private static final String RAZAO_SOCIAL = "Empresa XYZ";
 
 	@Test
+	@WithMockUser
 	public void testBuscarEmpresaCnpjInvalido() throws Exception {
 		BDDMockito.given(this.empresaService.buscarPorCnpj(Mockito.anyString())).willReturn(Optional.empty());
 
@@ -50,6 +52,7 @@ public class EmpresaControllerTest {
 	}
 
 	@Test
+	@WithMockUser
 	public void testBuscarEMpresaCnpjValido() throws Exception {
 		BDDMockito.given(this.empresaService.buscarPorCnpj(Mockito.anyString()))
 				.willReturn(Optional.of(this.obterDadosEmpresa()));
